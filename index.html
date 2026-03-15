@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Quality Roots Promo</title>
+
+  <!-- GSAP Core + Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/CustomEase.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/MotionPathPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/DrawSVGPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/MorphSVGPlugin.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,400;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=xyz123">
+</head>
+<body>
+  <div id="scene">
+    <!-- Layer 1: Background -->
+    <div id="background"></div>
+
+    <!-- Layer 2: Background Effects (particles, ambient elements) -->
+    <div id="background-effects">
+       <!-- SVG abstract brackets matching the Roots Madness style -->
+       <svg class="bg-bracket left-bracket" viewBox="0 0 100 200">
+           <path d="M 80 0 L 20 0 L 20 80 L 0 80 L 0 120 L 20 120 L 20 200 L 80 200" fill="none" stroke="#9bca88" stroke-width="4" opacity="0.1"/>
+       </svg>
+       <svg class="bg-bracket right-bracket" viewBox="0 0 100 200">
+           <path d="M 20 0 L 80 0 L 80 80 L 100 80 L 100 120 L 80 120 L 80 200 L 20 200" fill="none" stroke="#9bca88" stroke-width="4" opacity="0.1"/>
+       </svg>
+    </div>
+
+    <!-- Layer 3: Products Container (dynamically populated) -->
+    <div id="products-container"></div>
+
+    <!-- Layer 4: Foreground (products pass behind these elements) -->
+    <div id="foreground-layer">
+        <div class="dust-particles"></div>
+    </div>
+
+    <!-- Layer 5: UI / Text -->
+    <div id="ui-layer">
+        <div class="logo-container">
+            <svg class="logo-icon" viewBox="0 0 100 100">
+                <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="#e8e4d3" stroke-width="6"/>
+                <path d="M 50,95 L 50,30 M 50,60 L 20,40 M 50,70 L 80,50" stroke="#e8e4d3" stroke-width="6" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div class="logo-text">QUALITY ROOTS</div>
+        </div>
+    </div>
+  </div>
+
+  <script src="animation.js?v=xyz123"></script>
+</body>
+</html>

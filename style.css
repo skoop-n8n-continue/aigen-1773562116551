@@ -1,0 +1,294 @@
+:root {
+  --dark-green: #152a1e;
+  --mid-green: #2c4635;
+  --light-green: #9bca88;
+  --cream: #e8e4d3;
+  --off-white: #f5f2ea;
+  --dark-text: #0f1d14;
+  --bg-color: #1a3424;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+#scene {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+#background {
+  position: absolute;
+  inset: -50px; /* Slight bleed for parallax */
+  background-image: url('https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/n8n-continue%2Faigen-1773562116551%2Fassets%2Fquality_roots_bg-1773563708508.png?v=xyz123');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transform: scale(1.05); /* To allow panning */
+}
+
+#background-effects {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+}
+
+.bg-bracket {
+  width: 150px;
+  height: 300px;
+  position: absolute;
+}
+.left-bracket { top: 390px; left: -20px; }
+.right-bracket { top: 390px; right: -20px; }
+
+#products-container {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Foreground dust/particles */
+#foreground-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.dust-particles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+
+#ui-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  padding: 40px 60px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  color: var(--cream);
+  letter-spacing: 4px;
+}
+
+/* Product Scene */
+.product-scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The massive central card */
+.card-container {
+  width: 1600px;
+  height: 800px;
+  background: var(--off-white);
+  border-radius: 20px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Decorative diagonal stripe background on the card */
+.card-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(155, 202, 136, 0.03) 10px,
+    rgba(155, 202, 136, 0.03) 20px
+  );
+  z-index: 0;
+}
+
+/* Left side typography */
+.card-left {
+  flex: 0 0 55%;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.brand-badge {
+  background: var(--dark-green);
+  color: var(--cream);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.deal-text {
+  font-family: 'Anton', sans-serif;
+  font-size: 60px;
+  color: var(--light-green);
+  line-height: 1;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.main-price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 30px;
+}
+
+.main-price {
+  font-family: 'Anton', sans-serif;
+  font-size: 280px;
+  color: var(--dark-green);
+  line-height: 0.85;
+  letter-spacing: -5px;
+  margin-left: -10px;
+}
+
+.price-strike {
+  font-family: 'Anton', sans-serif;
+  font-size: 80px;
+  color: #a0a0a0;
+  text-decoration: line-through;
+  text-decoration-thickness: 6px;
+  text-decoration-color: #d15050;
+  line-height: 1;
+  position: relative;
+  top: -40px;
+}
+
+.product-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 42px;
+  color: var(--dark-text);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  max-width: 90%;
+}
+
+.tags {
+  display: flex;
+  gap: 15px;
+}
+
+.tag {
+  background: var(--light-green);
+  color: var(--dark-green);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Right side image */
+.card-right {
+  flex: 0 0 45%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background: var(--dark-green);
+  /* A sloped cutoff between cream and dark green */
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.stamp-bg {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  /* Using the generated image */
+  content: url('https://skoop-dev-code-agent.s3.us-east-1.amazonaws.com/n8n-continue%2Faigen-1773562116551%2Fassets%2Fvintage_stamp_border-1773563738592.png?v=xyz123');
+}
+
+.product-img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  position: relative;
+  z-index: 3;
+  filter: drop-shadow(0px 30px 40px rgba(0,0,0,0.6));
+}
+
+/* decorative madness element */
+.madness-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--dark-green),
+    var(--dark-green) 20px,
+    var(--light-green) 20px,
+    var(--light-green) 40px
+  );
+}
+

@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "brand": "Savvy",
+      "category": "Gummies",
+      "discounted_price": 3.5,
+      "image_url": "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fundefined-1773196700024.png",
+      "name": "Savvy Blue Magic Guap Gummy 25mg 1-Pack",
+      "price": "7",
+      "strain": "Indica",
+      "unit_weight": "1",
+      "unit_weight_unit": "g"
+    },
+    {
+      "brand": "Lost Farm",
+      "category": "Gummies",
+      "discounted_price": 15,
+      "image_url": "https://skoop-general.s3.us-east-1.amazonaws.com/n8n_image_gen%2Fundefined-1773196879298.png",
+      "name": "Lost Farm Juicy Peach x GSC Sherbet Live Resin Gummies 10mg x 10-Pack",
+      "price": "30",
+      "strain": "Hybrid",
+      "unit_weight": "1",
+      "unit_weight_unit": "g"
+    },
+    {
+      "brand": "URBNJ",
+      "category": "Whole Flower",
+      "discounted_price": 32.5,
+      "image_url": "https://leaflogixmedia.blob.core.windows.net/product-image/ce1aabe2-d086-4462-91ad-8f70ef4c5913.jpg",
+      "name": "Orange Malt Flower 7g",
+      "price": "65",
+      "strain": "Hybrid",
+      "unit_weight": "7",
+      "unit_weight_unit": "g"
+    }
+  ]
+}
